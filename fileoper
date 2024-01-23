@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Prompt the user for directory input
+read -p "Path to the directory you want to open: " directory_path
+
+# Check the provided directory
+if [ -d "$directory_path" ]; then
+    # If the directory exists, open the default file manager on the system
+    xdg-open "$directory_path"
+else
+    # If the directory doesn't exist, display an error message
+    echo "Error: Specified directory not found."
+fi
